@@ -1,0 +1,145 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta28.1.dtd" >
+   <PATCH nodename="C:\Users\desaxismundi\Desktop\Normals\normals.v4p" systemname="normals" filename="C:\Users\desaxismundi\Desktop\Normals\normals.v4p">
+   <BOUNDS type="Window" left="645" top="7515" width="6300" height="6375">
+   </BOUNDS>
+   <NODE componentmode="Hidden" hiddenwhenlocked="1" id="7" nodename="Translate (Transform Vector)" systemname="Translate (Transform Vector)">
+   <BOUNDS height="0" left="2475" top="2475" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="XYZ" visible="1">
+   </PIN>
+   <PIN pinname="Transform In" slicecount="1" visible="1" values="||">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" hiddenwhenlocked="1" id="6" nodename="GaussianSpread (Spreads)" systemname="GaussianSpread (Spreads)">
+   <BOUNDS height="0" left="3225" top="2025" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Spread Count" slicecount="1" values="270">
+   </PIN>
+   <PIN pinname="Random Seed" slicecount="1" visible="1" values="202">
+   </PIN>
+   <PIN pinname="Standard Deviation" slicecount="1" values="2.00999999999999">
+   </PIN>
+   </NODE>
+   <NODE componentmode="InAWindow" id="5" nodename="RENDERER (EX9)" systemname="Renderer (EX9)">
+   <BOUNDS height="270" left="1890" top="4020" type="Node" width="1935">
+   </BOUNDS>
+   <BOUNDS height="1800" left="1890" top="4020" type="Box" width="2400">
+   </BOUNDS>
+   <BOUNDS height="6975" left="7620" top="5850" type="Window" width="7965">
+   </BOUNDS>
+   <PIN pinname="Layers" visible="1">
+   </PIN>
+   <PIN pinname="EX9 Out" visible="1">
+   </PIN>
+   <PIN pinname="View" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Projection" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Windowed Antialiasing Quality Level" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Windowed Depthbuffer Format" slicecount="1" values="D24X8">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" encoded="0" values="|normal map|">
+   </PIN>
+   <PIN pinname="Backbuffer Width" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Backbuffer Height" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Background Color" slicecount="1" values="|0.00000,0.00000,0.00000,1.00000|">
+   </PIN>
+   <PIN pinname="Fullscreen Depthbuffer Format" slicecount="1" values="NONE">
+   </PIN>
+   <PIN pinname="Fullscreen Dimensions" slicecount="1" values="|1024 x 768|">
+   </PIN>
+   <PIN pinname="Fullscreen Antialiasing Quality Level" slicecount="1" values="NONE">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" id="3" nodename="Normals.fx" systemname="Normals (EX9.Effect)" filename="..\FXtodo\scene_lineDraw.fx\Normals.fx">
+   <BOUNDS height="270" left="1890" top="2940" type="Node" width="2025">
+   </BOUNDS>
+   <BOUNDS height="14550" left="7680" top="555" type="Window" width="11865">
+   </BOUNDS>
+   <PIN pinname="Transform" visible="1">
+   </PIN>
+   <PIN pinname="Mesh" visible="1">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Screen Size XY" visible="1">
+   </PIN>
+   <PIN pinname="Near Depth">
+   </PIN>
+   <PIN pinname="Far Depth">
+   </PIN>
+   <PIN pinname="Depth Threshhold">
+   </PIN>
+   <BOUNDS left="1890" top="2940" type="Box">
+   </BOUNDS>
+   <PIN pinname="Texel Alignment Offset">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="3" dstpinname="Transform" hiddenwhenlocked="0" srcnodeid="7" srcpinname="Transform Out">
+   </LINK>
+   <LINK dstnodeid="5" dstpinname="Layers" srcnodeid="3" srcpinname="Layer">
+   </LINK>
+   <NODE componentmode="Hidden" hiddenwhenlocked="1" id="2" managers="" nodename="Box (EX9.Geometry)" systemname="Box (EX9.Geometry)">
+   <BOUNDS height="270" left="1770" top="2115" type="Node" width="480">
+   </BOUNDS>
+   <PIN pinname="Mesh" pintype="Output" visible="1">
+   </PIN>
+   <PIN pinname="Descriptive Name" pintype="Configuration" slicecount="1" encoded="0" values="||">
+   </PIN>
+   <PIN pinname="Radius" pintype="Input" visible="1">
+   </PIN>
+   <PIN pinname="Resolution X" pintype="Input" visible="1">
+   </PIN>
+   <PIN pinname="Resolution Y" pintype="Input" visible="1">
+   </PIN>
+   <PIN pinname="ID" pintype="Output" visible="-1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="3" dstpinname="Mesh" hiddenwhenlocked="0" srcnodeid="2" srcpinname="Mesh">
+   </LINK>
+   <LINK dstnodeid="7" dstpinname="XYZ" hiddenwhenlocked="1" srcnodeid="6" srcpinname="Output">
+   </LINK>
+   <NODE systemname="Camera (Transform Softimage)" filename="%VVVV%\lib\nodes\modules\Transform\Camera (Transform Softimage).v4p" nodename="Camera (Transform Softimage)" componentmode="Hidden" id="8">
+   <BOUNDS type="Node" left="3375" top="3495" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="View" visible="1">
+   </PIN>
+   <PIN pinname="Projection" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="8" srcpinname="View" dstnodeid="5" dstpinname="View">
+   </LINK>
+   <LINK srcnodeid="8" srcpinname="Projection" dstnodeid="5" dstpinname="Projection">
+   </LINK>
+   <NODE systemname="Rotate (Transform)" nodename="Rotate (Transform)" componentmode="Hidden" id="9">
+   <BOUNDS type="Node" left="3240" top="1425" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="X" slicecount="1" visible="1" values="0.938509560681705">
+   </PIN>
+   <PIN pinname="Y" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="9" srcpinname="Transform Out" dstnodeid="7" dstpinname="Transform In">
+   </LINK>
+   <NODE systemname="LFO (Animation)" nodename="LFO (Animation)" componentmode="Hidden" id="10">
+   <BOUNDS type="Node" left="3555" top="795" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Period" slicecount="1" values="25">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="10" srcpinname="Output" dstnodeid="9" dstpinname="Y">
+   </LINK>
+   <LINK srcnodeid="10" srcpinname="Output" dstnodeid="9" dstpinname="X">
+   </LINK>
+   </PATCH>

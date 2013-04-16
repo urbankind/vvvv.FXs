@@ -1,0 +1,283 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta27.2.dtd" >
+   <PATCH nodename="D:\vvvv.desax\desax.github\vvvv.FXs\dx9\Materials\Checkers\Cage\Cage help.v4p">
+   <BOUNDS height="6540" left="4185" top="5775" type="Window" width="4470">
+   </BOUNDS>
+   <NODE componentmode="Hidden" id="10" nodename="cage.fx">
+   <BOUNDS height="270" left="300" top="1500" type="Node" width="2865">
+   </BOUNDS>
+   <BOUNDS height="8610" left="2010" top="7095" type="Window" width="13770">
+   </BOUNDS>
+   <BOUNDS left="300" top="1500" type="Box">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Mesh" visible="1">
+   </PIN>
+   <PIN pinname="Wire " slicecount="4" visible="1" values="1.19,1.19,1.19,1.19">
+   </PIN>
+   <PIN pinname="Empty Space " slicecount="4" visible="1" values="0,0,0,0">
+   </PIN>
+   <PIN pinname="Relative Width of Wire" slicecount="1" values="0.13">
+   </PIN>
+   <PIN pinname=" StripeTexture" visible="1">
+   </PIN>
+   <PIN pinname="Size of Pattern" slicecount="1" values="20">
+   </PIN>
+   <PIN pinname="Texture" visible="1">
+   </PIN>
+   <PIN pinname="Render State" slicecount="1" visible="1" values="||">
+   </PIN>
+   <PIN pinname="tColor">
+   </PIN>
+   <PIN pinname="Transform" slicecount="1" visible="1" values="||">
+   </PIN>
+   </NODE>
+   <NODE componentmode="InAWindow" id="9" nodename="RENDERER (EX9)">
+   <BOUNDS height="0" left="945" top="5220" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="4365" left="8985" top="5625" type="Window" width="5550">
+   </BOUNDS>
+   <BOUNDS height="1800" left="945" top="5220" type="Box" width="2400">
+   </BOUNDS>
+   <PIN pinname="Layers" visible="1">
+   </PIN>
+   <PIN pinname="Projection" slicecount="1" visible="1" values="||">
+   </PIN>
+   <PIN pinname="Fullscreen Antialiasing Quality Level" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Windowed Antialiasing Quality Level" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Windowed Depthbuffer Format" slicecount="1" values="NONE">
+   </PIN>
+   <PIN pinname="Fullscreen Depthbuffer Format" slicecount="1" values="NONE">
+   </PIN>
+   <PIN pinname="Background Color" slicecount="1" values="|1.00000,1.00000,1.00000,1.00000|">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" encoded="0" values="3">
+   </PIN>
+   <PIN pinname="Fullscreen Dimensions" slicecount="1" values="|1024 x 768|">
+   </PIN>
+   <PIN pinname="View" visible="1">
+   </PIN>
+   </NODE>
+   <NODE id="8" nodename="FILETEXTURE (EX9.TEXTURE)">
+   <BOUNDS height="0" left="2910" top="450" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   <PIN pinname="Filename" slicecount="1" encoded="0" values="aa_stripe.dds">
+   </PIN>
+   <PIN pinname="Mip Map Count" slicecount="1" values="All">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="10" dstpinname="Texture" linkstyle="VHV" srcnodeid="8" srcpinname="Texture Out">
+   </LINK>
+   <NODE id="7" nodename="Teapot (EX9.Geometry)">
+   <BOUNDS height="0" left="570" top="1125" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Mesh" visible="1">
+   </PIN>
+   <PIN pinname="Resolution X" visible="1">
+   </PIN>
+   <PIN pinname="Resolution Y" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="InAWindow" id="6" nodename="RENDERER (EX9)">
+   <BOUNDS height="0" left="600" top="4875" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="4365" left="8985" top="1260" type="Window" width="5550">
+   </BOUNDS>
+   <BOUNDS height="1800" left="600" top="4875" type="Box" width="2400">
+   </BOUNDS>
+   <PIN pinname="Layers" visible="1">
+   </PIN>
+   <PIN pinname="Projection" slicecount="1" visible="1" values="||">
+   </PIN>
+   <PIN pinname="Fullscreen Antialiasing Quality Level" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Windowed Antialiasing Quality Level" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Windowed Depthbuffer Format" slicecount="1" values="NONE">
+   </PIN>
+   <PIN pinname="Fullscreen Depthbuffer Format" slicecount="1" values="NONE">
+   </PIN>
+   <PIN pinname="Background Color" slicecount="1" values="|0.00000,0.00000,0.00000,1.00000|">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" encoded="0" values="2">
+   </PIN>
+   <PIN pinname="Fullscreen Dimensions" slicecount="1" values="|1024 x 768|">
+   </PIN>
+   <PIN pinname="View" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="InAWindow" id="5" nodename="RENDERER (EX9)">
+   <BOUNDS height="0" left="285" top="4515" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="4365" left="3435" top="1260" type="Window" width="5550">
+   </BOUNDS>
+   <BOUNDS height="1800" left="285" top="4515" type="Box" width="2400">
+   </BOUNDS>
+   <PIN pinname="Layers" visible="1">
+   </PIN>
+   <PIN pinname="Projection" slicecount="1" visible="1" values="||">
+   </PIN>
+   <PIN pinname="Fullscreen Antialiasing Quality Level" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Windowed Antialiasing Quality Level" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Windowed Depthbuffer Format" slicecount="1" values="NONE">
+   </PIN>
+   <PIN pinname="Fullscreen Depthbuffer Format" slicecount="1" values="NONE">
+   </PIN>
+   <PIN pinname="Background Color" slicecount="1" values="|0.00000,0.00000,0.00000,1.00000|">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" encoded="0" values="1">
+   </PIN>
+   <PIN pinname="Fullscreen Dimensions" slicecount="1" values="|1024 x 768|">
+   </PIN>
+   <PIN pinname="View" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="5" dstpinname="Layers" srcnodeid="10" srcpinname="Layer">
+   </LINK>
+   <NODE componentmode="Hidden" id="4" nodename="cage.fx">
+   <BOUNDS height="270" left="615" top="2385" type="Node" width="2865">
+   </BOUNDS>
+   <BOUNDS height="9615" left="8685" top="9375" type="Window" width="15405">
+   </BOUNDS>
+   <BOUNDS left="615" top="2385" type="Box">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Mesh" visible="1">
+   </PIN>
+   <PIN pinname="Wire " slicecount="4" visible="1" values="0.580000000000001,0.580000000000001,0.580000000000001,0.580000000000001">
+   </PIN>
+   <PIN pinname="Empty Space " slicecount="4" visible="1" values="-0.820000000000003,-0.820000000000003,-0.820000000000003,-0.820000000000003">
+   </PIN>
+   <PIN pinname="Relative Width of Wire" slicecount="1" values="0.15">
+   </PIN>
+   <PIN pinname=" StripeTexture" visible="1">
+   </PIN>
+   <PIN pinname="Size of Pattern" slicecount="1" visible="1" values="18.45">
+   </PIN>
+   <PIN pinname="Texture" visible="1">
+   </PIN>
+   <PIN pinname="Render State" slicecount="1" visible="1" values="||">
+   </PIN>
+   <PIN pinname="tColor">
+   </PIN>
+   <PIN pinname="Transform" slicecount="1" visible="1" values="||">
+   </PIN>
+   <PIN pinname="Wire" slicecount="1" values="|1.00000,0.80000,0.00000,1.00000|">
+   </PIN>
+   <PIN pinname="Empty Space" slicecount="1" values="|0.00000,0.00000,0.00000,0.00000|">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" id="3" nodename="cage.fx">
+   <BOUNDS height="270" left="945" top="3660" type="Node" width="2865">
+   </BOUNDS>
+   <BOUNDS height="15930" left="4890" top="165" type="Window" width="13770">
+   </BOUNDS>
+   <BOUNDS left="945" top="3660" type="Box">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Mesh" visible="1">
+   </PIN>
+   <PIN pinname="Wire " slicecount="4" visible="1" values="0.370000000000002,0.370000000000002,0.370000000000002,0.370000000000002">
+   </PIN>
+   <PIN pinname="Empty Space " slicecount="4" visible="1" values="0,0,0,0">
+   </PIN>
+   <PIN pinname="Relative Width of Wire" slicecount="1" values="0.2">
+   </PIN>
+   <PIN pinname=" StripeTexture" visible="1">
+   </PIN>
+   <PIN pinname="Size of Pattern" slicecount="1" values="3.38">
+   </PIN>
+   <PIN pinname="Texture" visible="1">
+   </PIN>
+   <PIN pinname="Render State" visible="1">
+   </PIN>
+   <PIN pinname="tColor">
+   </PIN>
+   <PIN pinname="Transform" slicecount="1" visible="1" values="||">
+   </PIN>
+   <PIN pinname="Wire Color" slicecount="1" values="|0.00000,0.93742,0.13598,1.00000|">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="9" dstpinname="Layers" srcnodeid="3" srcpinname="Layer">
+   </LINK>
+   <LINK dstnodeid="6" dstpinname="Layers" srcnodeid="4" srcpinname="Layer">
+   </LINK>
+   <LINK dstnodeid="10" dstpinname="Mesh" srcnodeid="7" srcpinname="Mesh">
+   </LINK>
+   <NODE id="2" nodename="Box (EX9.Geometry)">
+   <BOUNDS height="0" left="885" top="1935" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Mesh" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="4" dstpinname="Mesh" srcnodeid="2" srcpinname="Mesh">
+   </LINK>
+   <NODE id="1" nodename="Sphere (EX9.Geometry)">
+   <BOUNDS height="0" left="1230" top="3210" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Mesh" visible="1">
+   </PIN>
+   <PIN pinname="Resolution X" slicecount="1" values="40">
+   </PIN>
+   <PIN pinname="Resolution Y" slicecount="1" values="40">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="3" dstpinname="Mesh" srcnodeid="1" srcpinname="Mesh">
+   </LINK>
+   <LINK dstnodeid="4" dstpinname="Texture" linkstyle="VHV" srcnodeid="8" srcpinname="Texture Out">
+   </LINK>
+   <LINK dstnodeid="3" dstpinname="Texture" srcnodeid="8" srcpinname="Texture Out">
+   </LINK>
+   <NODE id="0" nodename="Fill (EX9.RenderState)">
+   <BOUNDS height="0" left="930" top="2865" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Render State Out" visible="1">
+   </PIN>
+   <PIN pinname="Fill Mode" slicecount="1" values="WireFrame">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="3" dstpinname="Render State" srcnodeid="0" srcpinname="Render State Out">
+   </LINK>
+   <NODE systemname="Camera (Transform Softimage)" filename="%VVVV%\lib\nodes\modules\Transform\Camera (Transform Softimage).v4p" nodename="Camera (Transform Softimage)" componentmode="Hidden" id="11">
+   <BOUNDS type="Node" left="1995" top="4095" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="View" visible="1">
+   </PIN>
+   <PIN pinname="Projection" visible="1">
+   </PIN>
+   <PIN pinname="Inital Distance" slicecount="1" values="1.58">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="11" srcpinname="View" dstnodeid="5" dstpinname="View">
+   </LINK>
+   <LINK srcnodeid="11" srcpinname="View" dstnodeid="6" dstpinname="View">
+   </LINK>
+   <LINK srcnodeid="11" srcpinname="View" dstnodeid="9" dstpinname="View">
+   </LINK>
+   <LINK srcnodeid="11" srcpinname="Projection" dstnodeid="5" dstpinname="Projection">
+   </LINK>
+   <LINK srcnodeid="11" srcpinname="Projection" dstnodeid="6" dstpinname="Projection">
+   </LINK>
+   <LINK srcnodeid="11" srcpinname="Projection" dstnodeid="9" dstpinname="Projection">
+   </LINK>
+   <NODE nodename="IOBox (Color)" componentmode="InABox" id="12" systemname="IOBox (Color)">
+   <BOUNDS type="Node" left="1170" top="390" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1170" top="390" width="1245" height="240">
+   </BOUNDS>
+   <PIN pinname="Color Input" slicecount="1" values="|1.00000,1.00000,1.00000,1.00000|">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" encoded="0" values="|Wire Color|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="12" srcpinname="Color Output" dstnodeid="10" dstpinname="Wire Color">
+   </LINK>
+   </PATCH>

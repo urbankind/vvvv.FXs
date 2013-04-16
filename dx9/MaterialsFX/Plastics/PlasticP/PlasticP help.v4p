@@ -1,0 +1,173 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta27.2.dtd" >
+   <PATCH nodename="D:\vvvv.desax\vvvv.FXs\dx9\Plastics\Plastic P\PlasticP help.v4p" componentmode="InAWindow">
+   <BOUNDS height="6345" left="2475" top="4380" type="Window" width="6105">
+   </BOUNDS>
+   <NODE componentmode="Hidden" id="5" nodename="plasticP.fx">
+   <BOUNDS height="100" left="1470" top="3645" type="Node" width="100">
+   </BOUNDS>
+   <BOUNDS height="10125" left="1275" top="1260" type="Window" width="18420">
+   </BOUNDS>
+   <BOUNDS left="1470" top="3645" type="Box">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Mesh" visible="1">
+   </PIN>
+   <PIN pinname="Light Direction XYZ" visible="1">
+   </PIN>
+   <PIN pinname="Technique" visible="1">
+   </PIN>
+   <PIN pinname="Light Color">
+   </PIN>
+   <PIN pinname="Ambient Light Color">
+   </PIN>
+   <PIN pinname="Surface Color">
+   </PIN>
+   <PIN pinname="Light Quadratic Intensity" slicecount="1" values="125">
+   </PIN>
+   <PIN pinname="Diffuse" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Specualr" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="InAWindow" id="4" nodename="RENDERER (EX9)">
+   <BOUNDS height="0" left="1485" top="4785" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="6555" left="8805" top="4290" type="Window" width="7230">
+   </BOUNDS>
+   <BOUNDS height="1800" left="1485" top="4785" type="Box" width="2400">
+   </BOUNDS>
+   <PIN pinname="Layers" visible="1">
+   </PIN>
+   <PIN pinname="Windowed Depthbuffer Format" slicecount="1" values="D24X8">
+   </PIN>
+   <PIN pinname="Windowed Antialiasing Quality Level" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="View" visible="1">
+   </PIN>
+   <PIN pinname="Projection" visible="1">
+   </PIN>
+   <PIN pinname="Fullscreen Depthbuffer Format" slicecount="1" values="NONE">
+   </PIN>
+   <PIN pinname="Fullscreen Dimensions" slicecount="1" values="|1024 x 768|">
+   </PIN>
+   <PIN pinname="Fullscreen Antialiasing Quality Level" slicecount="1" values="NONE">
+   </PIN>
+   <PIN pinname="Actual Backbuffer Width" visible="1">
+   </PIN>
+   <PIN pinname="Actual Backbuffer Height" visible="1">
+   </PIN>
+   <PIN pinname="Aspect Ratio" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="4" dstpinname="Layers" srcnodeid="5" srcpinname="Layer">
+   </LINK>
+   <NODE id="3" nodename="Teapot (EX9.Geometry)">
+   <BOUNDS height="0" left="900" top="1905" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Mesh" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="5" dstpinname="Mesh" srcnodeid="3" srcpinname="Mesh">
+   </LINK>
+   <NODE id="2" nodename=":MODULES:\vvvv group\Transform\Camera (Transform Softimage).v4p">
+   <BOUNDS height="0" left="2595" top="4200" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="6000" left="9345" top="12270" type="Window" width="9000">
+   </BOUNDS>
+   <BOUNDS height="3600" left="2595" top="4200" type="Box" width="4800">
+   </BOUNDS>
+   <PIN pinname="View" visible="1">
+   </PIN>
+   <PIN pinname="Projection" visible="1">
+   </PIN>
+   <PIN pinname="Inital Distance" slicecount="1" values="2">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="4" dstpinname="Projection" srcnodeid="2" srcpinname="Projection">
+   </LINK>
+   <NODE id="0" nodename="Vector (3d Join)">
+   <BOUNDS height="0" left="1485" top="2310" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="XYZ" visible="1">
+   </PIN>
+   <PIN pinname="X" slicecount="1" values="-1.15">
+   </PIN>
+   <PIN pinname="Y" slicecount="1" values="2.44">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="5" dstpinname="Light Direction XYZ" srcnodeid="0" srcpinname="XYZ">
+   </LINK>
+   <NODE nodename="IOBox (Enumerations)" componentmode="InABox" id="6">
+   <BOUNDS type="Node" left="4020" top="3210" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Window" left="10875" top="9360" width="215" height="160">
+   </BOUNDS>
+   <BOUNDS type="Box" left="4020" top="3210" width="1110" height="480">
+   </BOUNDS>
+   <PIN pinname="Output Enum" visible="1">
+   </PIN>
+   <PIN pinname="Style" slicecount="1" values="List">
+   </PIN>
+   <PIN pinname="Input Enum" slicecount="1" values="| PS|">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" encoded="0" values="Technique">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="6" srcpinname="Output Enum" dstnodeid="5" dstpinname="Technique">
+   </LINK>
+   <LINK srcnodeid="2" srcpinname="View" dstnodeid="4" dstpinname="View">
+   </LINK>
+   <NODE systemname="AspectRatio (Transform)" nodename="AspectRatio (Transform)" componentmode="Hidden" id="7">
+   <BOUNDS type="Node" left="3195" top="4755" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Aspect Width" visible="1">
+   </PIN>
+   <PIN pinname="Aspect Height" visible="1">
+   </PIN>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="4" srcpinname="Actual Backbuffer Width" dstnodeid="7" dstpinname="Aspect Width">
+   </LINK>
+   <LINK srcnodeid="4" srcpinname="Actual Backbuffer Height" dstnodeid="7" dstpinname="Aspect Height">
+   </LINK>
+   <LINK srcnodeid="7" srcpinname="Transform Out" dstnodeid="4" dstpinname="Aspect Ratio">
+   </LINK>
+   <NODE nodename="IOBox (Color)" componentmode="InABox" id="8" systemname="IOBox (Color)">
+   <BOUNDS type="Node" left="2490" top="675" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2490" top="675" width="2250" height="480">
+   </BOUNDS>
+   <PIN pinname="Color Input" slicecount="1" values="|0.98146,0.98146,0.98146,1.00000|">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" encoded="0" values="|Light Color|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="8" srcpinname="Color Output" dstnodeid="5" dstpinname="Light Color">
+   </LINK>
+   <NODE nodename="IOBox (Color)" componentmode="InABox" id="9" systemname="IOBox (Color)">
+   <BOUNDS type="Node" left="2640" top="1455" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2640" top="1455" width="2250" height="480">
+   </BOUNDS>
+   <PIN pinname="Color Input" slicecount="1" values="|0.47595,0.09212,0.27693,1.00000|">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" encoded="0" values="|Ambient Light Color|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="9" srcpinname="Color Output" dstnodeid="5" dstpinname="Ambient Light Color">
+   </LINK>
+   <NODE nodename="IOBox (Color)" componentmode="InABox" id="10" systemname="IOBox (Color)">
+   <BOUNDS type="Node" left="2760" top="2340" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2760" top="2340" width="2250" height="480">
+   </BOUNDS>
+   <PIN pinname="Color Input" slicecount="1" values="|0.57616,0.99815,0.53931,1.00000|">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" encoded="0" values="|Surface Color|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="10" srcpinname="Color Output" dstnodeid="5" dstpinname="Surface Color">
+   </LINK>
+   </PATCH>

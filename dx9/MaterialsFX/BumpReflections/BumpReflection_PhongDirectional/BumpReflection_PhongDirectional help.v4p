@@ -1,0 +1,315 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta28.1.dtd" >
+   <PATCH nodename="D:\vvvv.desax\desax.github\vvvv.FXs\dx9\MaterialsFX\BumpReflections\BumpReflection_PhongDirectional\BumpReflection_PhongDirectional help.v4p">
+   <BOUNDS height="6840" left="750" top="2610" type="Window" width="10530">
+   </BOUNDS>
+   <NODE componentmode="InAWindow" id="8" nodename="RENDERER (EX9)">
+   <BOUNDS height="0" left="1095" top="5430" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="6090" left="11460" top="2835" type="Window" width="5580">
+   </BOUNDS>
+   <BOUNDS height="1800" left="1095" top="5430" type="Box" width="2400">
+   </BOUNDS>
+   <PIN pinname="Layers" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Projection" visible="1">
+   </PIN>
+   <PIN pinname="View" visible="1">
+   </PIN>
+   <PIN pinname="Windowed Antialiasing Quality Level" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Windowed Depthbuffer Format" slicecount="1" values="D24X8">
+   </PIN>
+   <PIN pinname="Background Color" slicecount="1" values="|0.00000,0.00000,0.00000,1.00000|">
+   </PIN>
+   <PIN pinname="Fullscreen Depthbuffer Format" slicecount="1" values="NONE">
+   </PIN>
+   <PIN pinname="Fullscreen Dimensions" slicecount="1" values="|1024 x 768|">
+   </PIN>
+   <PIN pinname="Fullscreen Antialiasing Quality Level" slicecount="1" values="NONE">
+   </PIN>
+   <PIN pinname="Actual Backbuffer Width" visible="1">
+   </PIN>
+   <PIN pinname="Actual Backbuffer Height" visible="1">
+   </PIN>
+   <PIN pinname="Aspect Ratio" visible="1">
+   </PIN>
+   </NODE>
+   <NODE id="7" nodename="Teapot (EX9.Geometry)">
+   <BOUNDS height="0" left="645" top="2955" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Mesh" visible="1">
+   </PIN>
+   </NODE>
+   <NODE id="6" nodename="FILETEXTURE (EX9.TEXTURE)">
+   <BOUNDS height="0" left="4965" top="3165" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   <PIN pinname="Filename" slicecount="1" visible="1" encoded="0" values="sand02_NRM.jpg">
+   </PIN>
+   <PIN pinname="Mip Map Count" slicecount="1" values="All">
+   </PIN>
+   </NODE>
+   <NODE id="5" nodename=":MODULES:\vvvv group\Transform\Camera (Transform Softimage).v4p">
+   <BOUNDS height="0" left="2055" top="4860" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="6000" left="10860" top="10680" type="Window" width="9000">
+   </BOUNDS>
+   <BOUNDS height="3600" left="2055" top="4860" type="Box" width="4800">
+   </BOUNDS>
+   <PIN pinname="View Projection" visible="1">
+   </PIN>
+   <PIN pinname="View" visible="1">
+   </PIN>
+   <PIN pinname="Projection" visible="1">
+   </PIN>
+   <PIN pinname="Inital Distance" slicecount="1" values="2">
+   </PIN>
+   </NODE>
+   <NODE id="2" nodename="Vector (3d Join)">
+   <BOUNDS height="0" left="1845" top="3255" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="XYZ" visible="1">
+   </PIN>
+   <PIN pinname="X" slicecount="1" values="15.4">
+   </PIN>
+   <PIN pinname="Y" slicecount="1" values="4.39">
+   </PIN>
+   <PIN pinname="Z" slicecount="1" values="-10.29">
+   </PIN>
+   </NODE>
+   <NODE componentmode="InABox" id="1" nodename="IOBOX (VALUE ADVANCED)">
+   <BOUNDS height="0" left="4350" top="1215" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="160" left="10830" top="8400" type="Window" width="215">
+   </BOUNDS>
+   <BOUNDS height="240" left="4350" top="1215" type="Box" width="795">
+   </BOUNDS>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" encoded="0" values="bumpiness">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="1" values="0.96">
+   </PIN>
+   </NODE>
+   <NODE componentmode="InABox" id="0" nodename="IOBOX (VALUE ADVANCED)">
+   <BOUNDS height="0" left="4680" top="1920" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="160" left="12060" top="8010" type="Window" width="215">
+   </BOUNDS>
+   <BOUNDS height="240" left="4680" top="1920" type="Box" width="795">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" slicecount="1" encoded="0" values="|reflection strength|">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="1" values="0.2">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="8" dstpinname="Projection" srcnodeid="5" srcpinname="Projection">
+   </LINK>
+   <LINK srcnodeid="5" srcpinname="View" dstnodeid="8" dstpinname="View">
+   </LINK>
+   <NODE systemname="AspectRatio (Transform)" nodename="AspectRatio (Transform)" componentmode="Hidden" id="10">
+   <BOUNDS type="Node" left="2745" top="5445" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Aspect Width" visible="1">
+   </PIN>
+   <PIN pinname="Aspect Height" visible="1">
+   </PIN>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="8" srcpinname="Actual Backbuffer Width" dstnodeid="10" dstpinname="Aspect Width">
+   </LINK>
+   <LINK srcnodeid="8" srcpinname="Actual Backbuffer Height" dstnodeid="10" dstpinname="Aspect Height">
+   </LINK>
+   <LINK srcnodeid="10" srcpinname="Transform Out" dstnodeid="8" dstpinname="Aspect Ratio">
+   </LINK>
+   <NODE systemname="Normals (EX9.Geometry Mesh)" nodename="Normals (EX9.Geometry Mesh)" componentmode="Hidden" id="12">
+   <BOUNDS type="Node" left="660" top="3450" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Mesh" visible="1">
+   </PIN>
+   <PIN pinname="Compute Tangents" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Compute Binormals" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Smoothing Angle" slicecount="1" values="0.65">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="7" srcpinname="Mesh" dstnodeid="12" dstpinname="Mesh">
+   </LINK>
+   <NODE nodename="IOBox (Color)" componentmode="InABox" id="13" systemname="IOBox (Color)">
+   <BOUNDS type="Node" left="1410" top="660" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1410" top="660" width="1635" height="240">
+   </BOUNDS>
+   <PIN pinname="Color Input" slicecount="1" values="|0.56876,0.53858,0.81484,1.00000|">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" encoded="0" values="|Light Color|">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Color)" componentmode="InABox" id="14" systemname="IOBox (Color)">
+   <BOUNDS type="Node" left="1995" top="1260" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1995" top="1260" width="1530" height="240">
+   </BOUNDS>
+   <PIN pinname="Color Input" slicecount="1" values="|0.00000,0.00371,0.00157,1.00000|">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" encoded="0" values="|Ambient Light Color|">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="15" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Node" left="3015" top="2505" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="3015" top="2505" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" encoded="0" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" encoded="0" values="Specular">
+   </PIN>
+   </NODE>
+   <NODE id="20" nodename="FILETEXTURE (EX9.TEXTURE)" systemname="FileTexture (EX9.Texture)">
+   <BOUNDS height="270" left="6180" top="3495" type="Node" width="1095">
+   </BOUNDS>
+   <PIN pinname="Type" pintype="Input" visible="1">
+   </PIN>
+   <PIN pinname="Filename" visible="1">
+   </PIN>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   <PIN pinname="Load In Background" pintype="Input" slicecount="1" visible="-1" values="0">
+   </PIN>
+   <PIN pinname="Reload" pintype="Input" slicecount="1" visible="-1" values="0">
+   </PIN>
+   <PIN pinname="Mip Map Count" slicecount="1" values="All">
+   </PIN>
+   </NODE>
+   <NODE hiddenwhenlocked="1" id="19" nodename="SystemFolder (File)" systemname="SystemFolder (File)">
+   <BOUNDS height="0" left="6180" top="2565" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Do Rescan" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <NODE hiddenwhenlocked="1" id="18" nodename="Add (String)" systemname="Add (String)">
+   <BOUNDS height="270" left="6180" top="3015" type="Node" width="1110">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Intersperse" pintype="Input" slicecount="1" visible="-1" values="None">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="18" dstpinname="Input 1" hiddenwhenlocked="1" srcnodeid="19" srcpinname="Output">
+   </LINK>
+   <NODE componentmode="InABox" id="17" nodename="IOBox (Enumerations)" systemname="IOBox (Enumerations)">
+   <BOUNDS height="0" left="7350" top="3450" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="160" left="11220" top="12240" type="Window" width="215">
+   </BOUNDS>
+   <BOUNDS height="240" left="7350" top="3450" type="Box" width="1215">
+   </BOUNDS>
+   <PIN pinname="Style" slicecount="1" values="PullDown">
+   </PIN>
+   <PIN pinname="Output Enum" visible="1">
+   </PIN>
+   <PIN pinname="Input Enum" slicecount="1" values="|Cube Texture|">
+   </PIN>
+   <PIN pinname="Font" slicecount="1" values="|Microsoft Sans Serif|">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="20" dstpinname="Type" srcnodeid="17" srcpinname="Output Enum">
+   </LINK>
+   <NODE componentmode="InABox" id="16" nodename="IOBox (String)" systemname="IOBox (String)">
+   <BOUNDS height="0" left="6690" top="2235" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="270" left="6690" top="2235" type="Box" width="2985">
+   </BOUNDS>
+   <BOUNDS height="160" left="7545" top="2880" type="Window" width="215">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" visible="1" encoded="0" values="lib\assets\images\meso_cubemap.dds">
+   </PIN>
+   <PIN pinname="Output String" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="18" dstpinname="Input 2" hiddenwhenlocked="1" srcnodeid="16" srcpinname="Output String">
+   </LINK>
+   <LINK dstnodeid="20" dstpinname="Filename" hiddenwhenlocked="1" srcnodeid="18" srcpinname="Output">
+   </LINK>
+   <NODE componentmode="Hidden" id="9" nodename="BumpReflection_PhongDirectional (EX9.Effect)" systemname="BumpReflection_PhongDirectional (EX9.Effect)" filename="BumpReflection_PhongDirectional.fx">
+   <BOUNDS height="270" left="1080" top="4185" type="Node" width="4890">
+   </BOUNDS>
+   <BOUNDS height="8025" left="1710" top="5535" type="Window" width="13650">
+   </BOUNDS>
+   <BOUNDS left="1080" top="4185" type="Box">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Mesh" visible="1">
+   </PIN>
+   <PIN pinname="Diffuse Texture" slicecount="1" visible="1" values="||">
+   </PIN>
+   <PIN pinname="Normal-Map Texture" visible="1">
+   </PIN>
+   <PIN pinname="Environment" visible="1">
+   </PIN>
+   <PIN pinname="Light Color">
+   </PIN>
+   <PIN pinname="Ambient Light Color">
+   </PIN>
+   <PIN pinname="Specular">
+   </PIN>
+   <PIN pinname="Specular Power" slicecount="1" values="55.0000000000001">
+   </PIN>
+   <PIN pinname="Bumpiness" visible="1">
+   </PIN>
+   <PIN pinname="Reflection Strength" visible="1">
+   </PIN>
+   <PIN pinname="Light Position XYZ" visible="1">
+   </PIN>
+   <PIN pinname="ColorTexture" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="NormalTexture" visible="1">
+   </PIN>
+   <PIN pinname="EnvTexture" visible="1">
+   </PIN>
+   <PIN pinname="lPos XYZ" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="8" dstpinname="Layers" srcnodeid="9" srcpinname="Layer">
+   </LINK>
+   <LINK dstnodeid="9" dstpinname="Normal-Map Texture" srcnodeid="6" srcpinname="Texture Out">
+   </LINK>
+   <LINK dstnodeid="9" dstpinname="Light Position XYZ" srcnodeid="2" srcpinname="XYZ">
+   </LINK>
+   <LINK dstnodeid="9" dstpinname="Bumpiness" srcnodeid="1" srcpinname="Y Output Value">
+   </LINK>
+   <LINK dstnodeid="9" dstpinname="Reflection Strength" srcnodeid="0" srcpinname="Y Output Value">
+   </LINK>
+   <LINK srcnodeid="12" srcpinname="Mesh" dstnodeid="9" dstpinname="Mesh">
+   </LINK>
+   <LINK srcnodeid="13" srcpinname="Color Output" dstnodeid="9" dstpinname="Light Color">
+   </LINK>
+   <LINK srcnodeid="14" srcpinname="Color Output" dstnodeid="9" dstpinname="Ambient Light Color">
+   </LINK>
+   <LINK srcnodeid="15" srcpinname="Y Output Value" dstnodeid="9" dstpinname="Specular">
+   </LINK>
+   <LINK srcnodeid="20" srcpinname="Texture Out" dstnodeid="9" dstpinname="Environment">
+   </LINK>
+   <LINK srcnodeid="6" srcpinname="Texture Out" dstnodeid="9" dstpinname="NormalTexture">
+   </LINK>
+   <LINK srcnodeid="20" srcpinname="Texture Out" dstnodeid="9" dstpinname="EnvTexture">
+   </LINK>
+   <LINK srcnodeid="2" srcpinname="XYZ" dstnodeid="9" dstpinname="lPos XYZ">
+   </LINK>
+   </PATCH>

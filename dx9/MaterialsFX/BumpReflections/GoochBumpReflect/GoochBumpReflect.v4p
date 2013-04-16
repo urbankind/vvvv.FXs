@@ -1,0 +1,297 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta28.1.dtd" >
+   <PATCH nodename="D:\vvvv.desax\desax.github\vvvv.FXs\dx9\MaterialsFX\BumpReflections\GoochBumpReflect\GoochBumpReflect.v4p" systemname="GoochBumpReflect" filename="C:\Users\desaxismundi\Desktop\GoochBumpReflect\GoochBumpReflect.v4p">
+   <BOUNDS type="Window" left="1125" top="3360" width="9960" height="6705">
+   </BOUNDS>
+   <NODE systemname="Renderer (EX9)" nodename="Renderer (EX9)" componentmode="InAWindow" id="1">
+   <BOUNDS type="Node" left="1845" top="5160" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1845" top="5160" width="2400" height="1800">
+   </BOUNDS>
+   <BOUNDS type="Window" left="11445" top="3735" width="5190" height="5025">
+   </BOUNDS>
+   <PIN pinname="Layers" visible="1">
+   </PIN>
+   <PIN pinname="View" visible="1">
+   </PIN>
+   <PIN pinname="Projection" visible="1">
+   </PIN>
+   <PIN pinname="Windowed Depthbuffer Format" slicecount="1" values="D24X8">
+   </PIN>
+   <PIN pinname="Windowed Antialiasing Quality Level" slicecount="1" values="8">
+   </PIN>
+   <PIN pinname="Actual Backbuffer Width" visible="1">
+   </PIN>
+   <PIN pinname="Actual Backbuffer Height" visible="1">
+   </PIN>
+   <PIN pinname="Aspect Ratio" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Teapot (EX9.Geometry)" nodename="Teapot (EX9.Geometry)" componentmode="Hidden" id="2">
+   <BOUNDS type="Node" left="645" top="2775" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Mesh" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Camera (Transform Softimage)" filename="%VVVV%\lib\nodes\modules\Transform\Camera (Transform Softimage).v4p" nodename="Camera (Transform Softimage)" componentmode="Hidden" id="3">
+   <BOUNDS type="Node" left="3015" top="4680" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="View" visible="1">
+   </PIN>
+   <PIN pinname="Projection" visible="1">
+   </PIN>
+   <PIN pinname="Inital Distance" slicecount="1" values="2">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="3" srcpinname="View" dstnodeid="1" dstpinname="View">
+   </LINK>
+   <LINK srcnodeid="3" srcpinname="Projection" dstnodeid="1" dstpinname="Projection">
+   </LINK>
+   <NODE systemname="AspectRatio (Transform)" nodename="AspectRatio (Transform)" componentmode="Hidden" id="4">
+   <BOUNDS type="Node" left="3555" top="5175" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Aspect Width" visible="1">
+   </PIN>
+   <PIN pinname="Aspect Height" visible="1">
+   </PIN>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="1" srcpinname="Actual Backbuffer Width" dstnodeid="4" dstpinname="Aspect Width">
+   </LINK>
+   <LINK srcnodeid="1" srcpinname="Actual Backbuffer Height" dstnodeid="4" dstpinname="Aspect Height">
+   </LINK>
+   <LINK srcnodeid="4" srcpinname="Transform Out" dstnodeid="1" dstpinname="Aspect Ratio">
+   </LINK>
+   <NODE systemname="Normals (EX9.Geometry Mesh)" nodename="Normals (EX9.Geometry Mesh)" componentmode="Hidden" id="5">
+   <BOUNDS type="Node" left="660" top="3150" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Mesh" visible="1">
+   </PIN>
+   <PIN pinname="Compute Tangents" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Compute Binormals" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Epsilon" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Smoothing Angle" slicecount="1" values="0.5">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="2" srcpinname="Mesh" dstnodeid="5" dstpinname="Mesh">
+   </LINK>
+   <NODE id="11" nodename="FILETEXTURE (EX9.TEXTURE)" systemname="FileTexture (EX9.Texture)">
+   <BOUNDS height="0" left="4665" top="3600" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   <PIN pinname="Filename" slicecount="1" encoded="0" visible="1" values="sand02_NRM.jpg">
+   </PIN>
+   <PIN pinname="Mip Map Count" slicecount="1" values="All">
+   </PIN>
+   </NODE>
+   <NODE id="10" nodename="FILETEXTURE (EX9.TEXTURE)" systemname="FileTexture (EX9.Texture)">
+   <BOUNDS height="270" left="5565" top="3165" type="Node" width="1095">
+   </BOUNDS>
+   <PIN pinname="Type" pintype="Input" visible="1">
+   </PIN>
+   <PIN pinname="Filename" visible="1">
+   </PIN>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   <PIN pinname="Load In Background" pintype="Input" slicecount="1" visible="-1" values="0">
+   </PIN>
+   <PIN pinname="Reload" pintype="Input" slicecount="1" visible="-1" values="0">
+   </PIN>
+   <PIN pinname="Mip Map Count" slicecount="1" values="All">
+   </PIN>
+   </NODE>
+   <NODE hiddenwhenlocked="1" id="9" nodename="SystemFolder (File)" systemname="SystemFolder (File)">
+   <BOUNDS height="0" left="5565" top="2235" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Do Rescan" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <NODE hiddenwhenlocked="1" id="8" nodename="Add (String)" systemname="Add (String)">
+   <BOUNDS height="270" left="5565" top="2685" type="Node" width="1110">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Intersperse" pintype="Input" slicecount="1" visible="-1" values="None">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="8" dstpinname="Input 1" hiddenwhenlocked="1" srcnodeid="9" srcpinname="Output">
+   </LINK>
+   <NODE componentmode="InABox" id="7" nodename="IOBox (Enumerations)" systemname="IOBox (Enumerations)">
+   <BOUNDS height="0" left="6735" top="3120" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="160" left="11220" top="12240" type="Window" width="215">
+   </BOUNDS>
+   <BOUNDS height="240" left="6735" top="3120" type="Box" width="1215">
+   </BOUNDS>
+   <PIN pinname="Style" slicecount="1" values="PullDown">
+   </PIN>
+   <PIN pinname="Output Enum" visible="1">
+   </PIN>
+   <PIN pinname="Input Enum" slicecount="1" values="|Cube Texture|">
+   </PIN>
+   <PIN pinname="Font" slicecount="1" values="|Microsoft Sans Serif|">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="10" dstpinname="Type" srcnodeid="7" srcpinname="Output Enum">
+   </LINK>
+   <NODE componentmode="InABox" id="6" nodename="IOBox (String)" systemname="IOBox (String)">
+   <BOUNDS height="0" left="6075" top="1905" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="270" left="6075" top="1905" type="Box" width="2985">
+   </BOUNDS>
+   <BOUNDS height="160" left="7545" top="2880" type="Window" width="215">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" visible="1" encoded="0" values="lib\assets\images\meso_cubemap.dds">
+   </PIN>
+   <PIN pinname="Output String" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="8" dstpinname="Input 2" hiddenwhenlocked="1" srcnodeid="6" srcpinname="Output String">
+   </LINK>
+   <LINK dstnodeid="10" dstpinname="Filename" hiddenwhenlocked="1" srcnodeid="8" srcpinname="Output">
+   </LINK>
+   <NODE systemname="GoochBumpReflect (EX9.Effect)" filename="GoochBumpReflect.fx" nodename="GoochBumpReflect (EX9.Effect)" componentmode="Hidden" id="0">
+   <BOUNDS type="Node" left="1860" top="4065" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Mesh" visible="1">
+   </PIN>
+   <PIN pinname="NormalTexture" visible="1">
+   </PIN>
+   <PIN pinname="EnvTexture" visible="1">
+   </PIN>
+   <PIN pinname="Lamp 0">
+   </PIN>
+   <PIN pinname="Ambient Light">
+   </PIN>
+   <PIN pinname="Gooch Warm Tone">
+   </PIN>
+   <PIN pinname="Gooch Cool Tone">
+   </PIN>
+   <PIN pinname="Gloss Edge" slicecount="1" values="0.35">
+   </PIN>
+   <PIN pinname="Bumpiness">
+   </PIN>
+   <PIN pinname="Reflection Strength">
+   </PIN>
+   <PIN pinname="Surface">
+   </PIN>
+   <PIN pinname="Light Color" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="0" srcpinname="Layer" dstnodeid="1" dstpinname="Layers">
+   </LINK>
+   <LINK srcnodeid="5" srcpinname="Mesh" dstnodeid="0" dstpinname="Mesh">
+   </LINK>
+   <LINK srcnodeid="11" srcpinname="Texture Out" dstnodeid="0" dstpinname="NormalTexture">
+   </LINK>
+   <LINK srcnodeid="10" srcpinname="Texture Out" dstnodeid="0" dstpinname="EnvTexture">
+   </LINK>
+   <NODE nodename="IOBox (Color)" componentmode="InABox" id="13" systemname="IOBox (Color)">
+   <BOUNDS type="Node" left="1605" top="2730" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1605" top="2730" width="855" height="240">
+   </BOUNDS>
+   <PIN pinname="Color Input" slicecount="1" values="|1.00000,1.00000,1.00000,1.00000|">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" encoded="0" values="|Light Color|">
+   </PIN>
+   <PIN pinname="Color Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="13" srcpinname="Color Output" dstnodeid="0" dstpinname="Lamp 0">
+   </LINK>
+   <NODE nodename="IOBox (Color)" componentmode="InABox" id="14" systemname="IOBox (Color)">
+   <BOUNDS type="Node" left="2040" top="1335" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2040" top="1335" width="1290" height="240">
+   </BOUNDS>
+   <PIN pinname="Color Input" slicecount="1" values="|0.01620,0.01620,0.01620,1.00000|">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" encoded="0" values="|Ambient Light|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="14" srcpinname="Color Output" dstnodeid="0" dstpinname="Ambient Light">
+   </LINK>
+   <NODE nodename="IOBox (Color)" componentmode="InABox" id="15" systemname="IOBox (Color)">
+   <BOUNDS type="Node" left="2445" top="1890" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2445" top="1890" width="1410" height="240">
+   </BOUNDS>
+   <PIN pinname="Color Input" slicecount="1" values="|0.94425,0.24947,0.00000,1.00000|">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" encoded="0" values="|Gooch Warm Tone|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="15" srcpinname="Color Output" dstnodeid="0" dstpinname="Gooch Warm Tone">
+   </LINK>
+   <NODE nodename="IOBox (Color)" componentmode="InABox" id="16" systemname="IOBox (Color)">
+   <BOUNDS type="Node" left="2700" top="2475" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2700" top="2475" width="1260" height="240">
+   </BOUNDS>
+   <PIN pinname="Color Input" slicecount="1" values="|0.05176,0.06742,0.62121,1.00000|">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" encoded="0" values="|Gooch Cool Tone|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="16" srcpinname="Color Output" dstnodeid="0" dstpinname="Gooch Cool Tone">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="18" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Node" left="4005" top="1050" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="4005" top="1050" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="1.31">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" encoded="0" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" encoded="0" values="Bumpiness">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="18" srcpinname="Y Output Value" dstnodeid="0" dstpinname="Bumpiness">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="19" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Node" left="5010" top="1395" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="5010" top="1395" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="0.52">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" encoded="0" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" encoded="0" values="|Reflection Strength|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="19" srcpinname="Y Output Value" dstnodeid="0" dstpinname="Reflection Strength">
+   </LINK>
+   <NODE nodename="IOBox (Color)" componentmode="InABox" id="20" systemname="IOBox (Color)">
+   <BOUNDS type="Node" left="2175" top="3255" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2175" top="3255" width="780" height="240">
+   </BOUNDS>
+   <PIN pinname="Color Input" slicecount="1" values="|0.99815,0.99815,0.99815,1.00000|">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" encoded="0" values="Surface">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="20" srcpinname="Color Output" dstnodeid="0" dstpinname="Surface">
+   </LINK>
+   <LINK srcnodeid="13" srcpinname="Color Output" dstnodeid="0" dstpinname="Light Color">
+   </LINK>
+   </PATCH>

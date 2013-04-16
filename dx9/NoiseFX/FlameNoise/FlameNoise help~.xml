@@ -1,0 +1,271 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta27.2.dtd" >
+   <PATCH nodename="D:\vvvv.desax\desax.github\vvvv.FXs\dx9\PixelShaders\FlameNoise\FlameNoise help.v4p" componentmode="InAWindow">
+   <BOUNDS height="6015" left="780" top="2685" type="Window" width="8850">
+   </BOUNDS>
+   <NODE componentmode="InAWindow" id="13" nodename="RENDERER (EX9)">
+   <BOUNDS height="0" left="615" top="4785" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="6180" left="9720" top="2505" type="Window" width="6525">
+   </BOUNDS>
+   <BOUNDS height="1800" left="615" top="4785" type="Box" width="2400">
+   </BOUNDS>
+   <PIN pinname="Layers" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Background Color" slicecount="1" values="|1.00000,1.00000,1.00000,1.00000|">
+   </PIN>
+   <PIN pinname="Projection" slicecount="1" visible="1" values="||">
+   </PIN>
+   <PIN pinname="Windowed Depthbuffer Format" slicecount="1" values="D24X8">
+   </PIN>
+   <PIN pinname="Windowed Antialiasing Quality Level" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Fullscreen Depthbuffer Format" slicecount="1" values="NONE">
+   </PIN>
+   <PIN pinname="Fullscreen Dimensions" slicecount="1" values="|1024 x 768|">
+   </PIN>
+   <PIN pinname="Fullscreen Antialiasing Quality Level" slicecount="1" values="NONE">
+   </PIN>
+   <PIN pinname="View" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <NODE id="12" nodename="FILETEXTURE (EX9.TEXTURE)">
+   <BOUNDS height="0" left="6510" top="2820" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   <PIN pinname="Filename" slicecount="1" visible="1" encoded="0" values="noiseL8_32x32x32.dds">
+   </PIN>
+   <PIN pinname="Reload" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Type" slicecount="1" values="|Volume Texture|">
+   </PIN>
+   <PIN pinname="Mip Map Count" slicecount="1" values="All">
+   </PIN>
+   </NODE>
+   <NODE id="11" nodename="FILETEXTURE (EX9.TEXTURE)">
+   <BOUNDS height="0" left="6705" top="3375" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   <PIN pinname="Filename" slicecount="1" visible="1" encoded="0" values="ctHalf.dds">
+   </PIN>
+   <PIN pinname="Reload" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Mip Map Count" slicecount="1" values="All">
+   </PIN>
+   <PIN pinname="Type" slicecount="1" values="Texture">
+   </PIN>
+   </NODE>
+   <NODE id="1" nodename="Grid (EX9.Geometry)">
+   <BOUNDS height="0" left="660" top="3450" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Mesh" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Integrate (Differential)" nodename="Integrate (Differential)" componentmode="Hidden" id="22">
+   <BOUNDS type="Node" left="1650" top="2250" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Position Out" visible="1">
+   </PIN>
+   <PIN pinname="Position In" slicecount="1" values="-0.12">
+   </PIN>
+   </NODE>
+   <NODE id="10" nodename="Scale (Transform Vector)" systemname="Scale (Transform Vector)">
+   <BOUNDS height="0" left="1185" top="3465" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="XYZ" slicecount="3" values="2,2,2">
+   </PIN>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="Y">
+   </PIN>
+   <PIN pinname="X">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" id="14" nodename="FlameNoise (EX9.Effect)" systemname="FlameNoise (EX9.Effect)" filename="FlameNoise.fx">
+   <BOUNDS height="270" left="630" top="4140" type="Node" width="6795">
+   </BOUNDS>
+   <BOUNDS left="630" top="4140" type="Box">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Mesh" visible="1">
+   </PIN>
+   <PIN pinname="flameTexture" visible="1">
+   </PIN>
+   <PIN pinname="noiseTexture" visible="1">
+   </PIN>
+   <PIN pinname="flameTrans XYZ" visible="1">
+   </PIN>
+   <PIN pinname="Transform" visible="1">
+   </PIN>
+   <PIN pinname="flameScale XYZ" visible="1">
+   </PIN>
+   <PIN pinname="flameColor " visible="1">
+   </PIN>
+   <PIN pinname="noiseAnim XYZ" visible="1">
+   </PIN>
+   <PIN pinname="noiseScale XYZ" visible="1">
+   </PIN>
+   <PIN pinname="timeScale">
+   </PIN>
+   <PIN pinname="noiseStrength">
+   </PIN>
+   <PIN pinname="noiseFreq">
+   </PIN>
+   <PIN pinname="ticks" visible="1">
+   </PIN>
+   <BOUNDS height="10725" left="525" top="4320" type="Window" width="13830">
+   </BOUNDS>
+   <PIN pinname="Render State" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Noise Texture" visible="1">
+   </PIN>
+   <PIN pinname="Texture" visible="1">
+   </PIN>
+   <PIN pinname="flameColor" slicecount="1" values="|1.00000,0.00261,0.02014,1.00000|">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="13" dstpinname="Layers" srcnodeid="14" srcpinname="Layer">
+   </LINK>
+   <LINK dstnodeid="14" dstpinname="Mesh" srcnodeid="1" srcpinname="Mesh">
+   </LINK>
+   <LINK dstnodeid="14" dstpinname="Texture" srcnodeid="11" srcpinname="Texture Out">
+   </LINK>
+   <LINK dstnodeid="14" dstpinname="Noise Texture" srcnodeid="12" srcpinname="Texture Out">
+   </LINK>
+   <LINK srcnodeid="22" srcpinname="Position Out" dstnodeid="14" dstpinname="ticks">
+   </LINK>
+   <LINK srcnodeid="10" srcpinname="Transform Out" dstnodeid="14" dstpinname="Transform">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="23" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Node" left="1875" top="630" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1875" top="630" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="0.04">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||" encoded="0">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="noiseFreq" encoded="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="23" srcpinname="Y Output Value" dstnodeid="14" dstpinname="noiseFreq">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="24" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Node" left="2445" top="1245" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2445" top="1245" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="5">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||" encoded="0">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="noiseStrength" encoded="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="24" srcpinname="Y Output Value" dstnodeid="14" dstpinname="noiseStrength">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="25" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Node" left="2895" top="1830" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2895" top="1830" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||" encoded="0">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="timeScale" encoded="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="25" srcpinname="Y Output Value" dstnodeid="14" dstpinname="timeScale">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="26" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Node" left="6330" top="720" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="6330" top="720" width="795" height="720">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||" encoded="0">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Vector Size" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="3" visible="1" values="0.48,0,-0.15">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|flameTrans XYZ|" encoded="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="26" srcpinname="Y Output Value" dstnodeid="14" dstpinname="flameTrans XYZ">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="27" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Node" left="4860" top="795" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="4860" top="795" width="795" height="720">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="3" values="0.23,13.87,6.58">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||" encoded="0">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Vector Size" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|flameScale XYZ|" encoded="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="27" srcpinname="Y Output Value" dstnodeid="14" dstpinname="flameScale XYZ">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="28" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Node" left="4440" top="2805" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="4440" top="2805" width="795" height="720">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="3" values="-5.28,4.51,4.28">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||" encoded="0">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Vector Size" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|noiseAnim XYZ|" encoded="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="28" srcpinname="Y Output Value" dstnodeid="14" dstpinname="noiseAnim XYZ">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="29" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Node" left="3450" top="2520" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="3450" top="2520" width="795" height="720">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="3" values="11.17,11.8,0.48">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||" encoded="0">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Vector Size" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|noiseScale XYZ|" encoded="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="29" srcpinname="Y Output Value" dstnodeid="14" dstpinname="noiseScale XYZ">
+   </LINK>
+   </PATCH>
